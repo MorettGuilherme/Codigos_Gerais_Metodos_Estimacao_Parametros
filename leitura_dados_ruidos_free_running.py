@@ -44,7 +44,7 @@ import os
 def leitura_dados_ruidos(n_ocupacao):
 
     # Nome da pasta em que se encontra o arquivo de entrada dos ruídos.
-    pasta_dados_ruidos = "Dados_Ruidos_Free_Running"
+    pasta_dados_ruidos = "Dados_Ocupacoes_Free_Running"
 
     # Nome do arquivo de entrada dos ruídos.
     arquivo_dados_ruidos = f"OC_{n_ocupacao}.txt"
@@ -58,8 +58,8 @@ def leitura_dados_ruidos(n_ocupacao):
         # Abre o aquivo de entrada no modo leitura.
         with open(caminho_arquivo_dados_ruidos, "r") as arquivo_entrada_ruidos:
         
-            # Armazena os dados na variável Matriz_Dados_Ruidos.
-            vetor_dados_ruidos = np.array(np.loadtxt(arquivo_entrada_ruidos, skiprows = 1, dtype = 'double', delimiter = ','))
+            # Armazena os dados na variável Matriz_Dados_Ocupacoes.
+            Matriz_Dados_Ocupacoes = np.array(np.loadtxt(arquivo_entrada_ruidos, skiprows = 1, dtype = 'double', delimiter = ','))
  
     # Caso contrário.       
     else:
@@ -69,6 +69,8 @@ def leitura_dados_ruidos(n_ocupacao):
 
     # Obs.: da forma que o programa está escrito, os arquivos de entrada devem estar em uma pasta em que está o código do programa.
     # Caso deseja-se alterar isso basta mudar o endereço do arquivo.
+    
+    vetor_dados_ruidos = Matriz_Dados_Ocupacoes[:, -1]
     
     # A função retorna o vetor vetor_dados_ruidos.
     return vetor_dados_ruidos

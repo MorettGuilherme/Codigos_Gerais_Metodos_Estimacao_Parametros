@@ -171,23 +171,23 @@ def grafico_A_k_fold(opcao, Matriz_dados_k_fold_OC_0, Matriz_dados_k_fold_OC_10,
     Matriz_dados_erros_k_fold_OC_100 = Matriz_dados_k_fold_OC_100[: , indice_coluna_DP]
 
     # Plote dos dados.
-    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_0, yerr = Matriz_dados_erros_k_fold_OC_0, color='darkviolet', linestyle='--', marker='o', markersize = 3, label='OC 0')
-    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_10, yerr = Matriz_dados_erros_k_fold_OC_10, color='violet', linestyle='--', marker='o', markersize=3, label='OC 10')
-    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_20, yerr = Matriz_dados_erros_k_fold_OC_20, color='blue', linestyle='--', marker='o', markersize=3, label='OC 20')
-    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_30, yerr = Matriz_dados_erros_k_fold_OC_30, color='slateblue', linestyle='--', marker='o', markersize=3, label='OC 30')
-    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_40, yerr = Matriz_dados_erros_k_fold_OC_40, color='cyan', linestyle='--', marker='o', markersize=3, label='OC 40')
-    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_50, yerr = Matriz_dados_erros_k_fold_OC_50, color='green', linestyle='--', marker='o', markersize=3, label='OC 50')
-    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_60, yerr = Matriz_dados_erros_k_fold_OC_60, color='greenyellow', linestyle='--', marker='o', markersize=3, label='OC 60')
-    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_70, yerr = Matriz_dados_erros_k_fold_OC_70, color='yellow', linestyle='--', marker='o', markersize=3, label='OC 70')
-    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_80, yerr = Matriz_dados_erros_k_fold_OC_80, color='gold', linestyle='--', marker='o', markersize=3, label='OC 80')
-    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_90, yerr = Matriz_dados_erros_k_fold_OC_90, color='orange', linestyle='--', marker='o', markersize=3, label='OC 90')
-    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_100, yerr = Matriz_dados_erros_k_fold_OC_100, color='red', linestyle='--', marker='o', markersize=3, label='OC 100')
+    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_0, yerr = Matriz_dados_erros_k_fold_OC_0, color = 'darkviolet', linestyle = '--', marker = 'o', markersize = 3, label = '0')
+    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_10, yerr = Matriz_dados_erros_k_fold_OC_10, color = 'violet', linestyle = '--', marker = 'o', markersize = 3, label = '10')
+    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_20, yerr = Matriz_dados_erros_k_fold_OC_20, color = 'blue', linestyle = '--', marker = 'o', markersize = 3, label = '20')
+    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_30, yerr = Matriz_dados_erros_k_fold_OC_30, color = 'slateblue', linestyle = '--', marker = 'o', markersize = 3, label = '30')
+    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_40, yerr = Matriz_dados_erros_k_fold_OC_40, color = 'cyan', linestyle = '--', marker = 'o', markersize = 3, label = '40')
+    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_50, yerr = Matriz_dados_erros_k_fold_OC_50, color = 'green', linestyle = '--', marker = 'o', markersize = 3, label = '50')
+    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_60, yerr = Matriz_dados_erros_k_fold_OC_60, color = 'greenyellow', linestyle = '--', marker = 'o', markersize = 3, label = '60')
+    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_70, yerr = Matriz_dados_erros_k_fold_OC_70, color = 'yellow', linestyle = '--', marker = 'o', markersize = 3, label = '70')
+    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_80, yerr = Matriz_dados_erros_k_fold_OC_80, color = 'gold', linestyle = '--', marker = 'o', markersize = 3, label = '80')
+    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_90, yerr = Matriz_dados_erros_k_fold_OC_90, color = 'orange', linestyle = '--', marker = 'o', markersize = 3, label = '90')
+    plt.errorbar(janelamento, Matriz_dados_medias_k_fold_OC_100, yerr = Matriz_dados_erros_k_fold_OC_100, color = 'red', linestyle = '--', marker = 'o', markersize = 3, label = '100')
     
     # Comando para o grid do gráfico.
     plt.grid()
 
     # Comando para a legenda e o posicionamento.
-    plt.legend(loc='upper center', fontsize = 16, ncol=6)
+    plt.legend(title = 'Ocupação (OC.)', title_fontproperties = {'weight': 'bold', 'size': 12}, loc = 'upper center', fontsize = 16, ncol = 6)
 
     # Comando para a exibição do gráfico.
     plt.show()  
@@ -273,19 +273,19 @@ def grafico_B_k_fold(opcao, Matriz_dados_k_fold_OC_0, Matriz_dados_k_fold_OC_10,
     Matriz_dados_k_fold_erros_J19_OC = [Matriz_dados_k_fold_OC_0[indice_J19, indice_coluna_DP], Matriz_dados_k_fold_OC_10[indice_J19, indice_coluna_DP], Matriz_dados_k_fold_OC_20[indice_J19, indice_coluna_DP], Matriz_dados_k_fold_OC_30[indice_J19, indice_coluna_DP], Matriz_dados_k_fold_OC_40[indice_J19, indice_coluna_DP], Matriz_dados_k_fold_OC_50[indice_J19, indice_coluna_DP], Matriz_dados_k_fold_OC_60[indice_J19, indice_coluna_DP], Matriz_dados_k_fold_OC_70[indice_J19, indice_coluna_DP], Matriz_dados_k_fold_OC_80[indice_J19, indice_coluna_DP], Matriz_dados_k_fold_OC_90[indice_J19, indice_coluna_DP], Matriz_dados_k_fold_OC_100[indice_J19, indice_coluna_DP]]
 
     # Plote dos dados.
-    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J7_OC, yerr = Matriz_dados_k_fold_erros_J7_OC, color='violet', linestyle='--', marker='o', markersize = 3, label='J7')
-    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J9_OC, yerr = Matriz_dados_k_fold_erros_J9_OC, color='blue', linestyle='--', marker='o', markersize=3, label='J9')
-    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J11_OC, yerr = Matriz_dados_k_fold_erros_J11_OC, color='cyan', linestyle='--', marker='o', markersize=3, label='J11')
-    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J13_OC, yerr = Matriz_dados_k_fold_erros_J13_OC, color='green', linestyle='--', marker='o', markersize=3, label='J13')
-    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J15_OC, yerr = Matriz_dados_k_fold_erros_J15_OC, color='yellow', linestyle='--', marker='o', markersize=3, label='J15')
-    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J17_OC, yerr = Matriz_dados_k_fold_erros_J17_OC, color='orange', linestyle='--', marker='o', markersize=3, label='J17')
-    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J19_OC, yerr = Matriz_dados_k_fold_erros_J19_OC, color='red', linestyle='--', marker='o', markersize=3, label='J19')
+    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J7_OC, yerr = Matriz_dados_k_fold_erros_J7_OC, color = 'violet', linestyle = '--', marker='o', markersize = 3, label = '7')
+    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J9_OC, yerr = Matriz_dados_k_fold_erros_J9_OC, color = 'blue', linestyle = '--', marker='o', markersize = 3, label = '9')
+    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J11_OC, yerr = Matriz_dados_k_fold_erros_J11_OC, color = 'cyan', linestyle = '--', marker='o', markersize = 3, label = '11')
+    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J13_OC, yerr = Matriz_dados_k_fold_erros_J13_OC, color = 'green', linestyle = '--', marker='o', markersize = 3, label = '13')
+    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J15_OC, yerr = Matriz_dados_k_fold_erros_J15_OC, color = 'yellow', linestyle = '--', marker='o', markersize = 3, label = '15')
+    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J17_OC, yerr = Matriz_dados_k_fold_erros_J17_OC, color = 'orange', linestyle = '--', marker='o', markersize = 3, label = '17')
+    plt.errorbar(ocupacoes, Matriz_dados_k_fold_J19_OC, yerr = Matriz_dados_k_fold_erros_J19_OC, color = 'red', linestyle = '--', marker='o', markersize = 3, label = '19')
     
     # Comando para o grid do gráfico.
     plt.grid()
 
     # Comando para a legenda e o posicionamento.
-    plt.legend(loc='upper center', fontsize = 16, ncol=6)
+    plt.legend(title = 'Janelamento', title_fontproperties = {'weight': 'bold', 'size': 12}, loc='upper center', fontsize = 16, ncol = 4)
 
     # Comando para a exibição do gráfico.
     plt.show()  
