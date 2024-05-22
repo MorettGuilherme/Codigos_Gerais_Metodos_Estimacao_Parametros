@@ -200,7 +200,7 @@ def grafico_A_k_fold(opcao, Matriz_dados_k_fold_OC_0, Matriz_dados_k_fold_OC_10,
 def grafico_B_k_fold(opcao, Matriz_dados_k_fold_OC_0, Matriz_dados_k_fold_OC_10, Matriz_dados_k_fold_OC_20, Matriz_dados_k_fold_OC_30, Matriz_dados_k_fold_OC_40, Matriz_dados_k_fold_OC_50, Matriz_dados_k_fold_OC_60, Matriz_dados_k_fold_OC_70, Matriz_dados_k_fold_OC_80, Matriz_dados_k_fold_OC_90, Matriz_dados_k_fold_OC_100):
     
     # Definição do vetor das ocupações.
-    ocupacoes = np.arange(0, 11, 1)
+    ocupacoes = np.arange(0, 101, 10)
     
     # Definição da variável indice_coluna_media que armazena o índice da coluna das médias do dado estatístico.
     indice_coluna_medias = 1
@@ -286,7 +286,7 @@ def grafico_B_k_fold(opcao, Matriz_dados_k_fold_OC_0, Matriz_dados_k_fold_OC_10,
 
     # Comando para a legenda e o posicionamento.
     plt.legend(title = 'Janelamento', title_fontproperties = {'weight': 'bold', 'size': 12}, loc='upper center', fontsize = 16, ncol = 4)
-
+    
     # Comando para a exibição do gráfico.
     plt.show()  
     

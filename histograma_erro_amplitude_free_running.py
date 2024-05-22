@@ -77,7 +77,7 @@ def dados_estatisticos_erro_parametro(lista_erro_parametro):
 ### ------------------------------ 2) FUNÇÃO PARA A CONSTRUÇÃO DO HISTOGRAMA DO ERRO DE ESTIMAÇÃO (PARÂMETRO) ---------------------------------- ###
 
 # Definição de função para a confecção do histograma do erro de estimação (PARÂMETRO).
-def histograma_erro_parametro(lista_erro_parametro, media_erro_parametro, var_erro_parametro, desvio_padrao_erro_parametro):
+def histograma_erro_parametro(n_ocupacao, lista_erro_parametro, media_erro_parametro, var_erro_parametro, desvio_padrao_erro_parametro):
     
     # A lista do erro de estimação (PARÂMETRO) é convertida para o tipo numpy array.
     vetor_erro_parametro = np.array(lista_erro_parametro)
@@ -106,6 +106,9 @@ def histograma_erro_parametro(lista_erro_parametro, media_erro_parametro, var_er
     transform = plt.gca().transAxes,
     bbox = dict(facecolor = 'white', alpha = 0.5),
     fontsize = 14)
+    
+    # Comando para o título do gráfico.
+    plt.title(f"Ocupação (OC.) = {n_ocupacao}", fontsize = 18)
 
     # Criação de grid.
     plt.grid()
@@ -169,23 +172,23 @@ def arquivo_saida_dados_estatisticos_erro_parametro(n_ocupacao, media_erro_param
 # Definição da função principal (main) do código.
 def principal_histograma_erro_parametro():
     
-    # A variável numero_ocupacao armazena o valor digitado da ocupação desejada no terminal pelo usuário.
-    numero_ocupacao = float(input("Digite o valor da ocupação desejada: "))
+    # A variável n_ocupacao armazena o valor digitado da ocupação desejada no terminal pelo usuário.
+    n_ocupacao = float(input("Digite o valor da ocupação desejada: "))
 
     # A variável valores_ocupacao é uma lista com os valores aceitáveis de ocupação de 0 até 100.
     valores_ocupacao = list(range(0,101,10))
 
-    # Caso o valor digitado armazenado na variável numero_ocupacao não estiver presente na lista valores_ocupacao.
-    if numero_ocupacao not in valores_ocupacao:
+    # Caso o valor digitado armazenado na variável n_ocupacao não estiver presente na lista valores_ocupacao.
+    if n_ocupacao not in valores_ocupacao:
     
         # Exibição de uma mensagem de alerta de que a ocupação solicitada é inválida.
         print("\nNúmero de ocupação inválida!\n")
         # A execução do programa é interrompida.
         exit(1) 
 
-    # O tipo da variável numero_ocupacao é convertida para inteiro.
+    # O tipo da variável n_ocupacao é convertida para inteiro.
     # Obs.: essa conversão possibilita que a leitura do arquivo possa ser feita corretamente.
-    numero_ocupacao = int(numero_ocupacao)
+    n_ocupacao = int(n_ocupacao)
     
     # A variável n_janelamento armazena a quantidade de janelamento especificada no terminal pelo usuário.
     n_janelamento = int(input("Digite a quantidade de janelamento: "))
@@ -204,7 +207,7 @@ def principal_histograma_erro_parametro():
 
     # Chamada ordenada das funções.
     
-    Matriz_Dados_OC = leitura_dados_ocupacao(numero_ocupacao)
+    Matriz_Dados_OC = leitura_dados_ocupacao(n_ocupacao)
     
     Matriz_Dados_OC_sem_pedestal = retirada_pedestal(Matriz_Dados_OC)
     
@@ -218,9 +221,9 @@ def principal_histograma_erro_parametro():
     
     media_erro_parametro, var_erro_parametro, desvio_padrao_erro_parametro = dados_estatisticos_erro_parametro(lista_erro_parametro)
     
-    histograma_erro_parametro(lista_erro_parametro, media_erro_parametro, var_erro_parametro, desvio_padrao_erro_parametro)
+    histograma_erro_parametro(n_ocupacao, lista_erro_parametro, media_erro_parametro, var_erro_parametro, desvio_padrao_erro_parametro)
     
-    arquivo_saida_dados_estatisticos_erro_parametro(numero_ocupacao, media_erro_parametro, var_erro_parametro, desvio_padrao_erro_parametro)
+    arquivo_saida_dados_estatisticos_erro_parametro(n_ocupacao, media_erro_parametro, var_erro_parametro, desvio_padrao_erro_parametro)
     
 # Chamada da função principal (main) do código.
 principal_histograma_erro_parametro()
